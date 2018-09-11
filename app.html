@@ -1,0 +1,32 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Order Base</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="app.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
+</head>
+
+<body>    
+        <article class="rendering-information">
+            <header>Currency</header>
+            <canvas id="currencyChart"></canvas>
+            <div class="dropdown">                
+                <div><ul id="dropdownList" class="dropdown-content">
+                    <li id="145" class="selected" name="USD">USD</li>
+                    <li id="292" name="EUR">EUR</li>
+                    <li id="298" name="RUB">RUB</li>
+                </ul></div>
+                <button class="dropbtn">Select currency</button>
+                <label>Select start date</label><input type="date" id="startDate"/>
+                <label>Select end date</label><input type="date" id="endDate"/>
+            </div>           
+        </article>
+
+    <script src="index.js"></script>
+</body>
+
+</html>

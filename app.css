@@ -1,0 +1,128 @@
+* {
+    font-family: Arial;
+    box-sizing: border-box;
+}
+
+body,
+html {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    background: linear-gradient(lightsteelblue, lavender);
+    border-top: 3px solid steelblue;
+}
+
+.rendering-information {    
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  
+}
+
+.rendering-information header {
+    flex: 0;
+    background-color: rgb(239, 244, 248);
+    border-bottom: 1px solid rgb(223, 227, 236);
+    padding: 5px 1px 5px 1px;
+    text-align: center;
+    font-size: 12px;
+    min-height: 5%;
+}
+
+#currencyChart {    
+    flex: 1; 
+    min-height: 85%;
+}
+
+/* Dropdown Button */
+.dropdown {
+    position: relative;
+    min-height: 10%;
+    justify-content: space-between;
+    flex: 0;
+}
+
+.dropbtn {
+    background-color: #3498DB;
+    color: white;
+    padding: 5px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    height: 30px;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #2980B9;
+}
+
+#startDate {
+    display: inline-block;
+    height: 30px;
+}
+#endDate {
+    display: inline-block;
+    height: 30px;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    padding-left: 0px;
+    bottom: 60px;
+    margin: 0px;
+    margin-left: 40px;
+}
+
+/* Positions inside the dropdown */
+.dropdown-content li {
+    color: black;
+    padding: 8px 8px;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;   
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content li:hover {background-color: #ddd}
+
+/* Show the dropdown menu */
+.show {display:inline-block;}
+
+/* Scrollbar styles */
+::-webkit-scrollbar-button {
+    width: 5px;
+    height: 0px;
+}
+::-webkit-scrollbar-track {
+    background-color: white;
+}
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+    background-color: darkgray;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: gray;
+}
+::-webkit-resizer {
+    width: 4px;
+    height: 0px;
+}
+::-webkit-scrollbar {
+    width: 8px;
+    overflow: hidden;
+}
