@@ -66,7 +66,7 @@ function Model() {
             var сurrencyDateArr = сurrencyInfoArr.map(function(сurrencyInfo) {
                 return сurrencyInfo.Date.slice(0, 10);
             });
-            return (a = { сurrencyValueArr, сurrencyDateArr });
+            return (curveData = { сurrencyValueArr, сurrencyDateArr });
         });
     };
 
@@ -101,7 +101,7 @@ function Model() {
             var сurrencyDateArr = сurrencyInfoArr.map(function(сurrencyInfo) {
                 return сurrencyInfo.Date.slice(0, 10);
             });
-            return (a = { сurrencyValueArr, сurrencyDateArr });
+            return (curveData = { сurrencyValueArr, сurrencyDateArr });
         });
     };
     /**
@@ -136,7 +136,7 @@ function Model() {
             var сurrencyDateArr = сurrencyInfoArr.map(function(сurrencyInfo) {
                 return сurrencyInfo.Date.slice(0, 10);
             });
-            return (a = { сurrencyValueArr, сurrencyDateArr });
+            return (curveData = { сurrencyValueArr, сurrencyDateArr });
         });
     };
 }
