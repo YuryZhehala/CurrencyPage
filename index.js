@@ -58,15 +58,15 @@ function Model() {
      *
      * @returns {Object} the object contains currensy values and relevant dates arrays.
      */
-    this.getCurrencyAndDateArr = function() {
-        return this.getRate(_addressRequest).then(function(сurrencyInfoArr) {
-            var сurrencyValueArr = сurrencyInfoArr.map(function(сurrencyInfo) {
+    this.getCurrencyAndDateArray = function() {
+        return this.getRate(_addressRequest).then(function(сurrencyInfoArray) {
+            var сurrencyValueArray = сurrencyInfoArray.map(function(сurrencyInfo) {
                 return сurrencyInfo.Cur_OfficialRate;
             });
-            var сurrencyDateArr = сurrencyInfoArr.map(function(сurrencyInfo) {
+            var сurrencyDateArray = сurrencyInfoArray.map(function(сurrencyInfo) {
                 return сurrencyInfo.Date.slice(0, 10);
             });
-            return (curveData = { сurrencyValueArr, сurrencyDateArr });
+            return (curveData = { сurrencyValueArray, сurrencyDateArray });
         });
     };
 
@@ -94,14 +94,14 @@ function Model() {
         });
         event.target.setAttribute("class", "selected");
 
-        return this.getRate(_addressRequest).then(function(сurrencyInfoArr) {
-            var сurrencyValueArr = сurrencyInfoArr.map(function(сurrencyInfo) {
+        return this.getRate(_addressRequest).then(function(сurrencyInfoArray) {
+            var сurrencyValueArray = сurrencyInfoArray.map(function(сurrencyInfo) {
                 return сurrencyInfo.Cur_OfficialRate;
             });
-            var сurrencyDateArr = сurrencyInfoArr.map(function(сurrencyInfo) {
+            var сurrencyDateArray = сurrencyInfoArray.map(function(сurrencyInfo) {
                 return сurrencyInfo.Date.slice(0, 10);
             });
-            return (curveData = { сurrencyValueArr, сurrencyDateArr });
+            return (curveData = { сurrencyValueArray, сurrencyDateArray });
         });
     };
     /**
@@ -129,14 +129,14 @@ function Model() {
             .replace("STARTDATE", startDate)
             .replace("ENDDATE", endDate);
 
-        return this.getRate(_addressRequest).then(function(сurrencyInfoArr) {
-            var сurrencyValueArr = сurrencyInfoArr.map(function(сurrencyInfo) {
+        return this.getRate(_addressRequest).then(function(сurrencyInfoArray) {
+            var сurrencyValueArray = сurrencyInfoArray.map(function(сurrencyInfo) {
                 return сurrencyInfo.Cur_OfficialRate;
             });
-            var сurrencyDateArr = сurrencyInfoArr.map(function(сurrencyInfo) {
+            var сurrencyDateArray = сurrencyInfoArray.map(function(сurrencyInfo) {
                 return сurrencyInfo.Date.slice(0, 10);
             });
-            return (curveData = { сurrencyValueArr, сurrencyDateArr });
+            return (curveData = { сurrencyValueArray, сurrencyDateArray });
         });
     };
 }
@@ -301,11 +301,11 @@ function Controller(view, model) {
      * Render graph after application loads.
      */
     this._onLoadRenderGraph = function() {
-        model.getCurrencyAndDateArr().then(function(сurrencyAndDateArr) {
-            var сurrencyValueArr = сurrencyAndDateArr.сurrencyValueArr;
-            var сurrencyDateArr = сurrencyAndDateArr.сurrencyDateArr;
+        model.getCurrencyAndDateArray().then(function(сurrencyAndDateArray) {
+            var сurrencyValueArray = сurrencyAndDateArray.сurrencyValueArray;
+            var сurrencyDateArray = сurrencyAndDateArray.сurrencyDateArray;
             var currencyName = document.querySelector(".selected").getAttribute("name");
-            view.renderGraph(сurrencyDateArr, сurrencyValueArr, currencyName);
+            view.renderGraph(сurrencyDateArray, сurrencyValueArray, currencyName);
         });
     };
 
@@ -317,11 +317,11 @@ function Controller(view, model) {
      * @param {Event} event the DOM event object.
      */
     this._chooseCurrency = function() {
-        model.chooseCurrency(event).then(function(сurrencyAndDateArr) {
-            var сurrencyValueArr = сurrencyAndDateArr.сurrencyValueArr;
-            var сurrencyDateArr = сurrencyAndDateArr.сurrencyDateArr;
+        model.chooseCurrency(event).then(function(сurrencyAndDateArray) {
+            var сurrencyValueArray = сurrencyAndDateArray.сurrencyValueArray;
+            var сurrencyDateArray = сurrencyAndDateArray.сurrencyDateArray;
             var currencyName = document.querySelector(".selected").getAttribute("name");
-            view.renderGraph(сurrencyDateArr, сurrencyValueArr, currencyName);
+            view.renderGraph(сurrencyDateArray, сurrencyValueArray, currencyName);
         });
     };
 
@@ -342,11 +342,11 @@ function Controller(view, model) {
 
         model
             .chooseDate(currencyId, startDate, endDate)
-            .then(function(сurrencyAndDateArr) {
-                var сurrencyValueArr = сurrencyAndDateArr.сurrencyValueArr;
-                var сurrencyDateArr = сurrencyAndDateArr.сurrencyDateArr;
+            .then(function(сurrencyAndDateArray) {
+                var сurrencyValueArray = сurrencyAndDateArray.сurrencyValueArray;
+                var сurrencyDateArray = сurrencyAndDateArray.сurrencyDateArray;
                 var currencyName = document.querySelector(".selected").getAttribute("name");
-                view.renderGraph(сurrencyDateArr, сurrencyValueArr, currencyName);
+                view.renderGraph(сurrencyDateArray, сurrencyValueArray, currencyName);
             });
     };
 
@@ -367,11 +367,11 @@ function Controller(view, model) {
 
         model
             .chooseDate(currencyId, startDate, endDate)
-            .then(function(сurrencyAndDateArr) {
-                var сurrencyValueArr = сurrencyAndDateArr.сurrencyValueArr;
-                var сurrencyDateArr = сurrencyAndDateArr.сurrencyDateArr;
+            .then(function(сurrencyAndDateArray) {
+                var сurrencyValueArray = сurrencyAndDateArray.сurrencyValueArray;
+                var сurrencyDateArray = сurrencyAndDateArray.сurrencyDateArray;
                 var currencyName = document.querySelector(".selected").getAttribute("name");
-                view.renderGraph(сurrencyDateArr, сurrencyValueArr, currencyName);
+                view.renderGraph(сurrencyDateArray, сurrencyValueArray, currencyName);
             });
     };
 }
